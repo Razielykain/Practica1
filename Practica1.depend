@@ -1,0 +1,24 @@
+# depslib dependency file v1.0
+1791483410 source:c:\users\razie\c\c++\practica1\main.cpp
+	<iostream>
+	"Cola.h"
+
+1791481090 c:\users\razie\c\c++\practica1\include\cola.h
+	"NodoCola.h"
+	"Pedido.h"
+
+1791482771 c:\users\razie\c\c++\practica1\include\nodocola.h
+	<iostream>
+	"Pedido.h"
+
+1791481289 c:\users\razie\c\c++\practica1\include\pedido.h
+	<string>
+
+1791481505 source:c:\users\razie\c\c++\practica1\src\cola.cpp
+	"Cola.h"
+	<iostream>
+
+1791483227 source:c:\users\razie\c\c++\practica1\src\nodocola.cpp
+	"NodoCola.h"
+	"Pedido.h"
+
