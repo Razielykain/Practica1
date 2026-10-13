@@ -14,11 +14,16 @@
 1791481289 c:\users\razie\c\c++\practica1\include\pedido.h
 	<string>
 
-1791481505 source:c:\users\razie\c\c++\practica1\src\cola.cpp
+1791483955 source:c:\users\razie\c\c++\practica1\src\cola.cpp
 	"Cola.h"
 	<iostream>
+	"Pedido.cpp"
 
 1791483227 source:c:\users\razie\c\c++\practica1\src\nodocola.cpp
 	"NodoCola.h"
 	"Pedido.h"
+
+1791483729 c:\users\razie\c\c++\practica1\src\pedido.cpp
+	"Pedido.h"
+	<String>
 

@@ -35,8 +35,16 @@
 			<Add option="-fexceptions" />
 		</Compiler>
 		<Unit filename="include/Cola.h" />
+		<Unit filename="include/NodoCola.h" />
+		<Unit filename="include/Pedido.h">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
 		<Unit filename="main.cpp" />
 		<Unit filename="src/Cola.cpp" />
+		<Unit filename="src/NodoCola.cpp" />
+		<Unit filename="src/Pedido.cpp">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
 		<Extensions>
 			<lib_finder disable_auto="1" />
 		</Extensions>
