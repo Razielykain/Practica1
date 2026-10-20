@@ -1,5 +1,5 @@
 #include "Pizzeria.h"
-
+#include "Pedido.cpp"
 Pizzeria::Pizzeria()
 {
     //ctor
@@ -60,9 +60,15 @@ void Pizzeria::preparacion(Cola &generar, Cola &cocina, Cola &especial)
     {
         Pedido p = generar.desencolar();
         if (p.personalizada)
+        {
             especial.encolar(p);
+            p.estado = "Especial";
+        }
         else
+        {
             cocina.encolar(p);
+            p.estado = "Cocina";
+        }
         i++;
     }
 }
@@ -71,14 +77,11 @@ void Pizzeria::reparto(Cola &cocina, Cola &especial, Cola expedicion[])
 {
     // cocina/especial -> expedicion
     int i = 0;
-    while ((!cocina.es_vacia() || !especial.es_vacia()) && (i < N_PEDIDOS_PASO))
+    while (!cocina.es_vacia() && (i < N_PEDIDOS_PASO))
     {
-        Pedido p;
-        if (!cocina.es_vacia())
-            p = cocina.desencolar();
-        else if (!especial.es_vacia())
-            p = especial.desencolar();
+        Pedido p = cocina.desencolar();
         expedicion[p.zona_reparto].encolar(p);
+        p.estado = "Expedicion" + zonaToString(p.zona_reparto);
         i++;
     }
 }

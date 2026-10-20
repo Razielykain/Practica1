@@ -36,15 +36,21 @@
 		</Compiler>
 		<Unit filename="include/Cola.h" />
 		<Unit filename="include/NodoCola.h" />
+		<Unit filename="include/NodoPila.h" />
 		<Unit filename="include/Pedido.h">
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
+		<Unit filename="include/Pila.h" />
+		<Unit filename="include/Pizzeria.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="src/Cola.cpp" />
 		<Unit filename="src/NodoCola.cpp" />
+		<Unit filename="src/NodoPila.cpp" />
 		<Unit filename="src/Pedido.cpp">
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
+		<Unit filename="src/Pila.cpp" />
+		<Unit filename="src/Pizzeria.cpp" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
 		</Extensions>
