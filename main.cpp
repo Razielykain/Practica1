@@ -7,6 +7,7 @@ int main()
     Pizzeria p = Pizzeria();
     Cola generar, cocina, especial, norte, sur, este, oeste = Cola();
     Cola expedicion[ZONAS] = {norte, sur, este, oeste};
+    Pila cajas[ZONAS] = {norte, sur, este, oeste};
     bool salir = false;
     do
     {
@@ -30,6 +31,8 @@ int main()
             case 3:
                 p.mostrarEstado(generar, cocina, especial, expedicion);
                 break;
+            case 4:
+                
             default: cout << "Opcion no valida." << endl;
         }
     }
