@@ -73,6 +73,19 @@ void Pizzeria::preparacion(Cola &generar, Cola &cocina, Cola &especial)
     }
 }
 
+void Pizzeria::preparacionEspecial(Cola &especial, Cola &cocina)
+{
+    // especial -> cocina
+    int i = 0;
+    while ((!especial.es_vacia()) && (i < N_PEDIDOS_PASO))
+    {
+        Pedido p = especial.desencolar();
+        cocina.encolar(p);
+        p.estado = "Cocina";
+        i++;
+    }
+}
+
 void Pizzeria::reparto(Cola &cocina, Cola &especial, Cola expedicion[])
 {
     // cocina/especial -> expedicion
@@ -89,5 +102,7 @@ void Pizzeria::reparto(Cola &cocina, Cola &especial, Cola expedicion[])
 void Pizzeria::tick(Cola &generar, Cola &cocina, Cola &especial, Cola expedicion[])
 {   // Jimenez yams
     reparto(cocina, especial, expedicion);
+    preparacionEspecial(especial, cocina);
     preparacion(generar, cocina, especial);
 }
+
