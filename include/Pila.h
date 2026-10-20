@@ -1,6 +1,6 @@
 #ifndef PILA_H
 #define PILA_H
-#include "NodoPila.h"
+#include "NodoCola.h"
 
 class Pila
 {
@@ -8,14 +8,14 @@ class Pila
         Pila();
         ~Pila();
         bool esVacia();
-        void apilar(int v);
+        void apilar(Pedido p);
         void desapilar();
-        int mostrar();
+        Pedido mostrar();
 
     protected:
 
     private:
-        pnodo cima;
+        NodoCola* cima;
 };
 
 #endif // PILA_H

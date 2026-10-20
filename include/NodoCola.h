@@ -5,6 +5,7 @@
 class NodoCola
 {
     friend class Cola;
+    friend class Pila;
     public:
         NodoCola();
         NodoCola(Pedido e, NodoCola*sig = NULL);

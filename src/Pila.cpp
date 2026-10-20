@@ -1,5 +1,5 @@
 #include "Pila.h"
-#include "NodoPila.h"
+#include "NodoCola.h"
 #include <iostream>
 using namespace std;
 
@@ -16,16 +16,16 @@ bool Pila::esVacia()
         return cima == NULL; 
     }
 
-void Pila::apilar(int v)
+void Pila::apilar(Pedido p)
     { 
-        pnodo nuevo = new NodoPila(v, cima);
+        NodoCola* nuevo = new NodoCola(p, cima);
         //comienzo de la pila nevo nodo
         cima = nuevo;
 }
 
 void Pila::desapilar()
     { 
-        pnodo nodo; //puntero aux para manipular el nodo
+        NodoCola* nodo; //puntero aux para manipular el nodo
         if(cima)
         {
             nodo = cima;
@@ -40,7 +40,7 @@ Pedido Pila::mostrar()
             cout << "Pila vacia"<<endl;
         }
         else{
-            cout << "Cima pila: "<< cima->valor<<endl;
+            cout << "Cima pila: "<< cima->elemento<<endl;
         }
-    return 0;
+    return cima->elemento;
     }
