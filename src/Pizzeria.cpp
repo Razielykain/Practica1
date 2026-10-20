@@ -100,7 +100,7 @@ void Pizzeria::reparto(Cola &cocina, Cola &especial, Cola expedicion[])
 }
 
 void Pizzeria::tick(Cola &generar, Cola &cocina, Cola &especial, Cola expedicion[])
-{   // Jimenez yams
+{   // Guiseppe yams
     reparto(cocina, especial, expedicion);
     preparacionEspecial(especial, cocina);
     preparacion(generar, cocina, especial);
