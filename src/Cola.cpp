@@ -1,6 +1,6 @@
 #include "Cola.h"
 #include <iostream>
-#include "Pedido.cpp"
+#include "Pedido.h"
 using namespace std;
 
 
@@ -89,9 +89,9 @@ void Cola::mostrarCola()
         cout << "Datos de la Cola: "<< endl;
         while (aux)
         {
-            cout << aux->elemento.id_pedido << " \t " << aux->elemento.id_cliente << 
-            " \t " << tpToString(aux->elemento.tipo_pizza) << " \t " << (aux->elemento.isGrande ? "Grande" : "Mediana") << 
-            " \t " << zonaToString(aux->elemento.zona_reparto) << " \t " << (aux->elemento.personalizada ? "Si" : "No") << 
+            cout << aux->elemento.id_pedido << " \t " << aux->elemento.id_cliente <<
+            " \t " << toStrings::tpToString(aux->elemento.tipo_pizza) << " \t " << (aux->elemento.isGrande ? "Grande" : "Mediana") <<
+            " \t " << toStrings::zonaToString(aux->elemento.zona_reparto) << " \t " << (aux->elemento.personalizada ? "Si" : "No") <<
             " \t " << aux->elemento.estado << endl;
             aux = aux->siguiente;
         }

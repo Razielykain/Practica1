@@ -5,10 +5,10 @@
 using namespace std;
 
 Pila::Pila()
-    {cima = NULL;}
+    {cima = NULL; size = 0; sent = 0;}
 
 Pila::~Pila()
-    { 
+    {
         while(cima) desapilar();
     }
 
@@ -22,6 +22,7 @@ void Pila::apilar(Pedido p)
         NodoCola* nuevo = new NodoCola(p, cima);
         //comienzo de la pila nevo nodo
         cima = nuevo;
+        size++;
     }
 
 void Pila::desapilar()
@@ -32,10 +33,30 @@ void Pila::desapilar()
             nodo = cima;
             cima = nodo->siguiente;
             delete nodo;
+            size--;
         }
     }
+int Pila::getSize()
+    {
+        return size;
+    }
 
-Pedido Pila::mostrar()
+int Pila::getSent()
+    {
+        return sent;
+    }
+
+void Pila::send()
+    {
+        sent++;
+    }
+
+    Pedido Pila::cimaPila()
+    {  
+        return cima->elemento;
+    }
+
+void Pila::mostrar()
     { 
         if(esVacia()) 
         {
@@ -43,10 +64,23 @@ Pedido Pila::mostrar()
         }
         else
         {
-            cout << "Cima pila: " << cima->elemento.id_pedido << " \t " << cima->elemento.id_cliente << 
-            " \t " << tpToString(cima->elemento.tipo_pizza) << " \t " << (cima->elemento.isGrande ? "Grande" : "Mediana") << 
-            " \t " << zonaToString(cima->elemento.zona_reparto) << " \t " << (cima->elemento.personalizada ? "Si" : "No") << 
-            " \t " << cima->elemento.estado << endl;
+            cout << "activa: " << getSize() << "/" << CAP_CAJA << "\t enviados: " << getSent() << endl;
         }
-    return cima->elemento;
+    }
+
+    void Pila::mostrarCaja()
+    {
+        if(esVacia()) 
+        {
+            cout << "Pila vacia"<<endl;
+        }
+        else
+        {
+            NodoCola* aux = cima;
+            while(aux != NULL)
+            {
+                cout << aux->elemento.id_pedido << " - " << toStrings::tpToString(aux->elemento.tipo_pizza) << endl;
+                aux = aux->siguiente;
+            }
+        }
     }

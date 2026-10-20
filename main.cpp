@@ -17,6 +17,8 @@ int main()
         cout << "1. Generar N pedidos" << endl;
         cout << "2. Ejecutar un paso de simulacion" << endl;
         cout << "3. Mostrar estado del sistema" << endl;
+        cout << "4. Ver caja activa de una zona" << endl;
+        cout << "5. Retirar un pedido de la caja activa de una zona" << endl;
         cout << "0. Salir" << endl;
         cin >> opcion;
         switch (opcion)
@@ -31,10 +33,14 @@ int main()
                 p.tick(generar, cocina, especial, expedicion, cajas);
                 break;
             case 3:
-                p.mostrarEstado(generar, cocina, especial, expedicion);
+                p.mostrarEstado(generar, cocina, especial, expedicion, cajas);
                 break;
             case 4:
-                
+                p.actCaja(cajas, false);
+                break;
+            case 5:
+                p.actCaja(cajas, true);
+                break;
             default: cout << "Opcion no valida." << endl;
         }
     }

@@ -1,37 +1,50 @@
 # depslib dependency file v1.0
-1791877594 source:c:\users\razie\c\c++\practica1\main.cpp
+1792518066 source:c:\users\razie\c\c++\practica1\main.cpp
 	<iostream>
 	"Pizzeria.h"
+	"Pila.h"
 
 1791481090 c:\users\razie\c\c++\practica1\include\cola.h
 	"NodoCola.h"
 	"Pedido.h"
 
-1791482771 c:\users\razie\c\c++\practica1\include\nodocola.h
+1792487037 c:\users\razie\c\c++\practica1\include\nodocola.h
 	<iostream>
 	"Pedido.h"
 
-1791481289 c:\users\razie\c\c++\practica1\include\pedido.h
+1792512505 c:\users\razie\c\c++\practica1\include\pedido.h
 	<string>
 
-1791483955 source:c:\users\razie\c\c++\practica1\src\cola.cpp
+1792512280 source:c:\users\razie\c\c++\practica1\src\cola.cpp
 	"Cola.h"
 	<iostream>
-	"Pedido.cpp"
+	"Pedido.h"
 
-1791483227 source:c:\users\razie\c\c++\practica1\src\nodocola.cpp
+1792512072 source:c:\users\razie\c\c++\practica1\src\nodocola.cpp
 	"NodoCola.h"
 	"Pedido.h"
 
-1791483729 c:\users\razie\c\c++\practica1\src\pedido.cpp
+1792486852 c:\users\razie\c\c++\practica1\src\pedido.cpp
 	"Pedido.h"
 	<String>
 
-1791877487 source:c:\users\razie\c\c++\practica1\src\pizzeria.cpp
+1792519404 source:c:\users\razie\c\c++\practica1\src\pizzeria.cpp
 	"Pizzeria.h"
+	"Pedido.h"
 
-1791877489 c:\users\razie\c\c++\practica1\include\pizzeria.h
+1792519295 c:\users\razie\c\c++\practica1\include\pizzeria.h
 	<iostream>
 	<string>
 	"Cola.h"
+	"Pedido.h"
+	"Pila.h"
+
+1792518988 c:\users\razie\c\c++\practica1\include\pila.h
+	"NodoCola.h"
+
+1792518987 source:c:\users\razie\c\c++\practica1\src\pila.cpp
+	"Pila.h"
+	"NodoCola.h"
+	"Pedido.cpp"
+	<iostream>
 
