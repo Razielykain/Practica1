@@ -4,6 +4,8 @@
 #include <iostream>
 #include <string>
 #include "Cola.h"
+#include "Pedido.h"
+#include "Pila.h"
 
 #define PROB_PERSONALIZACION 20
 #define ZONAS 4
@@ -23,7 +25,8 @@ public:
     void preparacionEspecial(Cola &especial, Cola &cocina);
     void preparacion(Cola &generar, Cola &cocina, Cola &especial);
     void reparto(Cola &cocina, Cola &especial, Cola expedicion[]);
-    void tick(Cola &generar, Cola &cocina, Cola &especial, Cola expedicion[]);
+    void cajas(Cola expedicion[], Pila cajas[]);
+    void tick(Cola &generar, Cola &cocina, Cola &especial, Cola expedicion[], Pila cajas[]);
 };
 
 

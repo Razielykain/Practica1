@@ -1,5 +1,6 @@
 #include "Pila.h"
 #include "NodoCola.h"
+#include "Pedido.cpp"
 #include <iostream>
 using namespace std;
 
@@ -21,7 +22,7 @@ void Pila::apilar(Pedido p)
         NodoCola* nuevo = new NodoCola(p, cima);
         //comienzo de la pila nevo nodo
         cima = nuevo;
-}
+    }
 
 void Pila::desapilar()
     { 
@@ -36,11 +37,16 @@ void Pila::desapilar()
 
 Pedido Pila::mostrar()
     { 
-        if(esVacia()) {
+        if(esVacia()) 
+        {
             cout << "Pila vacia"<<endl;
         }
-        else{
-            cout << "Cima pila: "<< cima->elemento<<endl;
+        else
+        {
+            cout << "Cima pila: " << cima->elemento.id_pedido << " \t " << cima->elemento.id_cliente << 
+            " \t " << tpToString(cima->elemento.tipo_pizza) << " \t " << (cima->elemento.isGrande ? "Grande" : "Mediana") << 
+            " \t " << zonaToString(cima->elemento.zona_reparto) << " \t " << (cima->elemento.personalizada ? "Si" : "No") << 
+            " \t " << cima->elemento.estado << endl;
         }
     return cima->elemento;
     }

@@ -1,5 +1,6 @@
 #include <iostream>
 #include "Pizzeria.h"
+#include "Pila.h"
 using namespace std;
 
 int main()
@@ -7,7 +8,8 @@ int main()
     Pizzeria p = Pizzeria();
     Cola generar, cocina, especial, norte, sur, este, oeste = Cola();
     Cola expedicion[ZONAS] = {norte, sur, este, oeste};
-    Pila cajas[ZONAS] = {norte, sur, este, oeste};
+    Pila pnorte, psur, peste, poeste = Pila();
+    Pila cajas[ZONAS] = {pnorte, psur, peste, poeste};
     bool salir = false;
     do
     {
@@ -26,7 +28,7 @@ int main()
                 generar = p.pedir(generar);
                 break;
             case 2:
-                p.tick(generar, cocina, especial, expedicion);
+                p.tick(generar, cocina, especial, expedicion, cajas);
                 break;
             case 3:
                 p.mostrarEstado(generar, cocina, especial, expedicion);

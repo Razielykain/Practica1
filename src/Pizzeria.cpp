@@ -99,7 +99,24 @@ void Pizzeria::reparto(Cola &cocina, Cola &especial, Cola expedicion[])
     }
 }
 
-void Pizzeria::tick(Cola &generar, Cola &cocina, Cola &especial, Cola expedicion[])
+void Pizzeria::cajas(Cola expedicion[], Pila cajas[])
+{
+    // expedicion -> cajas
+    for (int i = 0; i < ZONAS; i++)
+    {
+        int j = 0;
+        while ((!expedicion[i].es_vacia()) && (j < CAP_CAJA))
+        {
+            Pedido p = expedicion[i].desencolar();
+            cajas[i].apilar(p);
+            p.estado = "Caja" + zonaToString(p.zona_reparto);
+            j++;
+        }
+    }
+    
+}
+
+void Pizzeria::tick(Cola &generar, Cola &cocina, Cola &especial, Cola expedicion[], Pila cajas[])
 {   // Guiseppe yams
     reparto(cocina, especial, expedicion);
     preparacionEspecial(especial, cocina);
