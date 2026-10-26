@@ -72,13 +72,13 @@ void Pizzeria::preparacion(Cola &generar, Cola &cocina, Cola &especial)
         Pedido p = generar.desencolar();
         if (p.personalizada)
         {
-            especial.encolar(p);
             p.estado = "Especial";
+            especial.encolar(p);
         }
         else
         {
-            cocina.encolar(p);
             p.estado = "Cocina";
+            cocina.encolar(p);
         }
         i++;
     }
@@ -91,8 +91,8 @@ void Pizzeria::preparacionEspecial(Cola &especial, Cola &cocina)
     while ((!especial.es_vacia()) && (i < N_PEDIDOS_PASO))
     {
         Pedido p = especial.desencolar();
-        cocina.encolar(p);
         p.estado = "Cocina";
+        cocina.encolar(p);
         i++;
     }
 }
@@ -104,8 +104,8 @@ void Pizzeria::reparto(Cola &cocina, Cola &especial, Cola expedicion[])
     while (!cocina.es_vacia() && (i < N_PEDIDOS_PASO))
     {
         Pedido p = cocina.desencolar();
+        p.estado = "Expedicion " + toStrings::zonaToString(p.zona_reparto);
         expedicion[p.zona_reparto].encolar(p);
-        p.estado = "Expedicion" + toStrings::zonaToString(p.zona_reparto);
         i++;
     }
 }
@@ -124,8 +124,8 @@ void Pizzeria::caja(Cola expedicion[], Pila cajas[])
         while ((!expedicion[i].es_vacia()) && (j < N_PEDIDOS_PASO) && (cajas[i].getSize() < CAP_CAJA))
         {
             Pedido p = expedicion[i].desencolar();
+            p.estado = "Caja " + toStrings::zonaToString(p.zona_reparto);
             cajas[i].apilar(p);
-            p.estado = "Caja" + toStrings::zonaToString(p.zona_reparto);
             j++;
         }
     }
@@ -167,21 +167,16 @@ bool Pizzeria::retirarPedidoCaja(Pila &caja)
         string id;
         cout << "Ingrese el ID del pedido a retirar: ";
         cin >> id;
-
+        bool found = false;
         Pila aux;
-        while (!caja.esVacia())
+        while (!caja.esVacia() && !found)
         {
             Pedido p = caja.cimaPila();
-            if (p.id_pedido == id)
-            {
-                caja.desapilar();
-                return true;
-            }
+            caja.desapilar();
+            if (p.id_pedido == id) 
+                found = true;
             else
-            {
                 aux.apilar(p);
-                caja.desapilar();
-            }
         }
 
         while (!aux.esVacia())
@@ -190,7 +185,7 @@ bool Pizzeria::retirarPedidoCaja(Pila &caja)
             caja.apilar(p);
             aux.desapilar();
         }
-        return false;
+        return found;
     }
 }
 

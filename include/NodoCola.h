@@ -10,8 +10,6 @@ class NodoCola
         NodoCola();
         NodoCola(Pedido e, NodoCola*sig = NULL);
         virtual ~NodoCola();
-        string tpToString(TipoPizza tp);
-        string zonaToString(ZonaReparto z);
 
     protected:
 

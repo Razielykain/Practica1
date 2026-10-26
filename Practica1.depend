@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1792518066 source:c:\users\razie\c\c++\practica1\main.cpp
+1792519598 source:c:\users\razie\c\c++\practica1\main.cpp
 	<iostream>
 	"Pizzeria.h"
 	"Pila.h"
@@ -8,7 +8,7 @@
 	"NodoCola.h"
 	"Pedido.h"
 
-1792487037 c:\users\razie\c\c++\practica1\include\nodocola.h
+1793032037 c:\users\razie\c\c++\practica1\include\nodocola.h
 	<iostream>
 	"Pedido.h"
 
@@ -28,7 +28,7 @@
 	"Pedido.h"
 	<String>
 
-1792519404 source:c:\users\razie\c\c++\practica1\src\pizzeria.cpp
+1793032607 source:c:\users\razie\c\c++\practica1\src\pizzeria.cpp
 	"Pizzeria.h"
 	"Pedido.h"
 
